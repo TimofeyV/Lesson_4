@@ -3,6 +3,7 @@
 // 82 -> 10
 // 9012 -> 12
 
+Console.WriteLine("Программа выдаёт сумму всех цифр в числе");
 Console.Write("Введите число: ");
 string text = Console.ReadLine();
 int number = Convert.ToInt32(text);
