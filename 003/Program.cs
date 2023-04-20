@@ -29,21 +29,21 @@ string StrWithoutSpace(string series)
 // Функция, которая проверить правильно ли введён массив
 void CheckArray(char series)
 {
-        if (series == '0' || series == '1' || series == '2' || series == '3' || series == '4'
-        || series == '5' || series == '6' || series == '7' || series == '8'
-        || series == '9' || series == ',' || series == '-') 
-        { }
-        else
-        {
-            Console.WriteLine($"Произошла ошибка при вводе");
-        }
+    char[] standart = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', ',' };
+
+    if (standart.Contains(series))
+    { }
+    else
+    {
+        Console.WriteLine($"Произошла ошибка при вводе");
+    }
 }
 
 // Фукнция для заполнения массива
 int[] ArrOfNumb(string newStr)
 {
     int[] array = new int[1];
-    int[] except_arr = {};
+    int[] except_arr = { };
     int j = 0;
 
     for (int i = 0; i < newStr.Length; i++)
@@ -55,7 +55,8 @@ int[] ArrOfNumb(string newStr)
             figure += newStr[i];
             CheckArray(newStr[i]);
             i++;
-            if(figure.Length > 1 && figure[0] != '-') // Обработчик случая, если в ряде содержатся двузначные числа
+
+            if ((figure.Length > 1 && figure[0] != '-') || figure.Length > 2) // Обработчик случая, если в ряде содержатся двузначные числа и более
             {
                 Console.WriteLine("Разрешается вводить числа из промежутка (-10;10)");
                 return except_arr;
