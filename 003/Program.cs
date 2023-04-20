@@ -44,9 +44,8 @@ int[] ArrOfNumb(string newStr)
 {
     int[] array = new int[1];
     int[] except_arr = { };
-    int j = 0;
 
-    for (int i = 0; i < newStr.Length; i++)
+    for (int i = 0, j = 0; i < newStr.Length; i++, j++)
     {
         string figure = "";
 
@@ -69,8 +68,6 @@ int[] ArrOfNumb(string newStr)
         {
             array = array.Concat(new int[] { 0 }).ToArray();    // добавляет новый нулевой элемент в конец массива
         }
-
-        j++;
     }
     return array;
 }
